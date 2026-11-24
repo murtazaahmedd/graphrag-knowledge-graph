@@ -1,0 +1,22 @@
+[
+  {"q": "Which team owns the Billing Service?", "expect": ["Payments Team"], "kind": "1-hop"},
+  {"q": "Who leads the Analytics Team?", "expect": ["Omar Farooq"], "kind": "1-hop"},
+  {"q": "Where does the Usage Service store data?", "expect": ["BigQuery"], "kind": "1-hop"},
+  {"q": "Which services does the Platform Team own?", "expect": ["Event Gateway", "Identity Service", "Usage Service"], "kind": "1-hop"},
+  {"q": "What does the Ticket Service run on?", "expect": ["GKE"], "kind": "1-hop"},
+  {"q": "Who is a member of the Platform Team?", "expect": ["Hamza Raza"], "kind": "1-hop"},
+  {"q": "Who leads the team that owns the Billing Service?", "expect": ["Ayesha Khan"], "kind": "2-hop"},
+  {"q": "Which team owns the service that the Usage Dashboard reads from?", "expect": ["Platform Team"], "kind": "2-hop"},
+  {"q": "Which database does the service behind the Revenue Dashboard store data in?", "expect": ["Billing Postgres"], "kind": "2-hop"},
+  {"q": "Who leads the department that the Payments Team is part of?", "expect": ["Imran Sheikh"], "kind": "2-hop"},
+  {"q": "Which platform does the service that the Support Dashboard reads from run on?", "expect": ["GKE"], "kind": "2-hop"},
+  {"q": "Who leads the team that owns the service behind the Usage Dashboard?", "expect": ["Sara Malik"], "kind": "3-hop"},
+  {"q": "Which department does the team that owns the Ticket Service belong to?", "expect": ["Engineering Department"], "kind": "2-hop"},
+  {"q": "Who manages the department of the team that owns the Revenue Dashboard?", "expect": ["Nadia Hussain"], "kind": "3-hop"},
+  {"q": "What does the Revenue Dashboard depend on, directly or indirectly?", "expect": ["Billing Service", "Event Gateway", "Identity Service", "Usage Service"], "kind": "transitive"},
+  {"q": "What is affected if the Identity Service fails?", "expect": ["Billing Service", "Revenue Dashboard", "Support Dashboard", "Ticket Service"], "kind": "impact"},
+  {"q": "What breaks if the Event Gateway goes down?", "expect": ["Billing Service", "Revenue Dashboard", "Usage Dashboard", "Usage Service"], "kind": "impact"},
+  {"q": "How is Ayesha Khan connected to the Revenue Dashboard?", "expect": ["Ayesha Khan -> Payments Team -> Billing Service -> Revenue Dashboard"], "kind": "connection"},
+  {"q": "What is the capital of France?", "expect": "ABSTAIN", "kind": "out-of-scope"},
+  {"q": "How do I bake sourdough bread?", "expect": "ABSTAIN", "kind": "out-of-scope"}
+]

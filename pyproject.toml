@@ -1,0 +1,14 @@
+[project]
+name = "graphrag-knowledge-graph"
+version = "0.1.0"
+description = "GraphRAG over a knowledge graph: extraction, hybrid retrieval and multi-hop reasoning with evidence paths"
+requires-python = ">=3.10"
+dependencies = ["duckdb>=1.1", "networkx>=3.2", "numpy>=1.26", "scikit-learn>=1.4"]
+
+[project.optional-dependencies]
+llm = ["litellm>=1.40"]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
